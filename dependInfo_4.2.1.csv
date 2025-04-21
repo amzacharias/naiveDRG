@@ -1,0 +1,11 @@
+"","Package","Version","Depends","Imports","Built"
+"1","dplyr","1.0.9","R (>= 3.4.0)","generics, glue (>= 1.3.2), lifecycle (>= 1.0.1), magrittr (>=
+1.5), methods, R6, rlang (>= 1.0.2), tibble (>= 2.1.3),
+tidyselect (>= 1.1.1), utils, vctrs (>= 0.4.1), pillar (>=
+1.5.1)","4.2.1"
+"2","IsoformSwitchAnalyzeR","1.17.04","R (>= 3.6), limma, DEXSeq, ggplot2","methods, BSgenome, plyr, reshape2, gridExtra, Biostrings (>=
+2.50.0), IRanges, GenomicRanges, DRIMSeq, RColorBrewer,
+rtracklayer, VennDiagram, DBI, grDevices, graphics, stats,
+utils, GenomeInfoDb, grid, tximport (>= 1.7.1), tximeta (>=
+1.7.12), edgeR, futile.logger, stringr, dplyr, magrittr, readr,
+tibble, XVector, BiocGenerics, RCurl, Biobase","4.2.1"
