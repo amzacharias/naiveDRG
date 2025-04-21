@@ -50,3 +50,7 @@ rsconnect/
 
 # Large data files
 0_data/
+
+# Accessory GEO script
+md5checksums.sh
+
