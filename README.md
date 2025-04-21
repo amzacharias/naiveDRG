@@ -45,9 +45,6 @@ manner”](https://doi.org/10.1101/2025.04.07.646998)
 
         find . -type f -name "*.sh" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
         find . -type f -name "*.R" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
--   **This project is located within a folder that contains a folder
-    with raw data, preprocessing of reads, and a folder with “helper” R
-    functions**
 
 **Primary session info**:
 

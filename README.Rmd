@@ -3,15 +3,15 @@ title: "Naive DRG workflow"
 author: "Amanda Zacharias"
 date: "`r Sys.Date()`"
 output:
-  md_document:
-    variant: markdown_github
-    toc: true
-    toc_depth: 3
   html_document:
     theme: readable
     highlight: default
     toc: true
     toc_float: true
+    toc_depth: 3
+  md_document:
+    variant: markdown_github
+    toc: true
     toc_depth: 3
 ---
 
@@ -38,12 +38,11 @@ Data analysis for the manuscript, ["Nociceptor clock genes control excitability 
 - <mark>Caution! Some scripts use absolute paths (especially bash scripts) </mark>
     - Run the following commands in the terminal to replace the `absolutePath` spaceholder 
     found in scripts with your absolute path to the project directory.
+    
     ```
     find . -type f -name "*.sh" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
     find . -type f -name "*.R" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
     ```
-- **This project is located within a folder that contains a folder with raw data, preprocessing of reads, and a folder
-with "helper" R functions**
 
 **Primary session info**: 
 
