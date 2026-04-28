@@ -10,7 +10,7 @@ output:
     toc_float: true
     toc_depth: 3
   md_document:
-    variant: markdown_github
+    variant: gfm
     toc: true
     toc_depth: 3
 ---
@@ -44,7 +44,7 @@ Data analysis for the manuscript, ["Nociceptor clock genes control excitability 
     find . -type f -name "*.R" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
     ```
 
-**Primary session info**: 
+**Figure 5a session info**: 
 
 - R version 3.6.0 (2019-04-26)
 - Platform: x86_64-redhat-linux-gnu (64-bit)
@@ -52,26 +52,18 @@ Data analysis for the manuscript, ["Nociceptor clock genes control excitability 
 - Matrix products: default
 - BLAS/LAPACK: /usr/lib64/R/lib/libRblas.so  
 
-**Packages**:   
-R version 3.6.0
-```{r echo = FALSE}
-depends_3.6.0 <- read.csv("dependInfo_3.6.0.csv", row.names = 1)
-rownames(depends_3.6.0) <- seq(1, nrow(depends_3.6.0), 1)
-kable(depends_3.6.0[, 1:2])
-```
+**Peer Review Supplementary Figure 2 session info**: 
 
-R version 4.2.1
-```{r echo = FALSE}
-depends_4.2.1 <- read.csv("dependInfo_4.2.1.csv",
-  row.names = 1
-)
-rownames(depends_4.2.1) <- seq(1, nrow(depends_4.2.1), 1)
-kable(depends_4.2.1[, 1:2])
-```
+- R version r/4.5.0 (2019-04-26)
+- Platform: x86_64-pc-linux-gnu
+- Running under: CRocky Linux 8.10 (Green Obsidian)
+- Matrix products: default
+- BLAS/LAPACK: FlexiBLAS IMKL;  LAPACK version 3.11.0
 
 ------------------------------------------------------------------------------------
+## Figure 5a workflow
 
-## Main pipeline
+> Figure5a directory.
 
 ### Helpers
 
@@ -131,5 +123,19 @@ Notice the `../0_helpers` folder. This directory contains many R functions that 
 3. Run `2_writeScripts.R` to write a bash script for each analysis.
     - Candidate genes are removed after the lowly expressed genes are removed.
 4. Run `*.sh` scripts in the `bash` folder to execute analyses. 
+
+## Peer Review Supplementary Figure 2 workflow
+
+> PR_SFigure2 directory.
+
+### Helpers
+
+Notice the `workflow/scripts/helpers` folder. This directory contains many R functions that minimize repetition of code and are generally helpful.
+
+## Scripts
+
+Execute computational demanding scripts with bash scripts (`.sh`).
+
+Rscripts being run: `dea_Markers.R` and `dea_nav18.R`
 
 ## Done! 

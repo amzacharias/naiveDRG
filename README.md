@@ -1,12 +1,21 @@
--   [Preface](#preface)
--   [Setup](#setup)
--   [Main pipeline](#main-pipeline)
-    -   [Helpers](#helpers)
-    -   [Quantify transcript counts](#quantify-transcript-counts)
-    -   [Data preparation](#data-preparation)
-    -   [From candidates, identify differentially expressed
-        genes](#from-candidates-identify-differentially-expressed-genes)
--   [Done!](#done)
+-   <a href="#preface" id="toc-preface">Preface</a>
+-   <a href="#setup" id="toc-setup">Setup</a>
+-   <a href="#figure-5a-workflow" id="toc-figure-5a-workflow">Figure 5a
+    workflow</a>
+    -   <a href="#helpers" id="toc-helpers">Helpers</a>
+    -   <a href="#quantify-transcript-counts"
+        id="toc-quantify-transcript-counts">Quantify transcript counts</a>
+    -   <a href="#data-preparation" id="toc-data-preparation">Data
+        preparation</a>
+    -   <a href="#from-candidates-identify-differentially-expressed-genes"
+        id="toc-from-candidates-identify-differentially-expressed-genes">From
+        candidates, identify differentially expressed genes</a>
+-   <a href="#peer-review-supplementary-figure-2-workflow"
+    id="toc-peer-review-supplementary-figure-2-workflow">Peer Review
+    Supplementary Figure 2 workflow</a>
+    -   <a href="#helpers-1" id="toc-helpers-1">Helpers</a>
+-   <a href="#scripts" id="toc-scripts">Scripts</a>
+-   <a href="#done" id="toc-done">Done!</a>
 
 ------------------------------------------------------------------------
 
@@ -46,7 +55,7 @@ manner”](https://doi.org/10.1101/2025.04.07.646998)
         find . -type f -name "*.sh" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
         find . -type f -name "*.R" -exec sed -i'' -e 's#absolutePath#/my/custom/path#g' {} +
 
-**Primary session info**:
+**Figure 5a session info**:
 
 -   R version 3.6.0 (2019-04-26)
 -   Platform: x86_64-redhat-linux-gnu (64-bit)
@@ -54,40 +63,19 @@ manner”](https://doi.org/10.1101/2025.04.07.646998)
 -   Matrix products: default
 -   BLAS/LAPACK: /usr/lib64/R/lib/libRblas.so
 
-**Packages**:  
-R version 3.6.0
+**Peer Review Supplementary Figure 2 session info**:
 
-| Package               | Version |
-|:----------------------|:--------|
-| AnnotationDbi         | 1.48.0  |
-| arrayQualityMetrics   | 3.42.0  |
-| Biobase               | 2.46.0  |
-| cividis               | 0.2.0   |
-| DESeq2                | 1.26.0  |
-| dplyr                 | 1.1.0   |
-| ggplot2               | 3.4.1   |
-| ggrepel               | 0.9.3   |
-| gprofiler2            | 0.2.1   |
-| IsoformSwitchAnalyzeR | 1.8.0   |
-| knitr                 | 1.42    |
-| optparse              | 1.7.3   |
-| pheatmap              | 1.0.12  |
-| renv                  | 0.17.3  |
-| rmarkdown             | 2.20    |
-| stringr               | 1.5.0   |
-| tibble                | 3.1.8   |
-| tidyr                 | 1.3.0   |
-
-R version 4.2.1
-
-| Package               | Version |
-|:----------------------|:--------|
-| dplyr                 | 1.0.9   |
-| IsoformSwitchAnalyzeR | 1.17.04 |
+-   R version r/4.5.0 (2019-04-26)
+-   Platform: x86_64-pc-linux-gnu
+-   Running under: CRocky Linux 8.10 (Green Obsidian)
+-   Matrix products: default
+-   BLAS/LAPACK: FlexiBLAS IMKL; LAPACK version 3.11.0
 
 ------------------------------------------------------------------------
 
-## Main pipeline
+## Figure 5a workflow
+
+> Figure5a directory.
 
 ### Helpers
 
@@ -148,7 +136,7 @@ functions that minimize repetition of code and are generally helpful.
     -   it is marked as an outlier by multiple outlier detection metrics
         after normalization
     -   Note: No samples were considered outliers and removed.
-        1.  Normalize counts with the [median of ratios
+        2.  Normalize counts with the [median of ratios
             method](https://doi.org/10.1186/gb-2010-11-10-r106)
 3.  Run `2_filtering.R` to perform non-specific filtering to remove
     lowly expressed features. - This and the last step are performed
@@ -165,5 +153,21 @@ functions that minimize repetition of code and are generally helpful.
     -   Candidate genes are removed after the lowly expressed genes are
         removed.
 4.  Run `*.sh` scripts in the `bash` folder to execute analyses.
+
+## Peer Review Supplementary Figure 2 workflow
+
+> PR_SFigure2 directory.
+
+### Helpers
+
+Notice the `workflow/scripts/helpers` folder. This directory contains
+many R functions that minimize repetition of code and are generally
+helpful.
+
+## Scripts
+
+Execute computational demanding scripts with bash scripts (`.sh`).
+
+Rscripts being run: `dea_Markers.R` and `dea_nav18.R`
 
 ## Done!
